@@ -1,0 +1,24 @@
+[package]
+name = "game_3d"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = "0.8.1"
+bevy_rapier3d = "0.18.0"
+bevy_ui = "0.8.1"
+bevy_renet = "0.0.5"
+serde = { version = "1.0.147", features = ["derive"] }
+bincode = "2.0.0-rc.2"
+public-ip = "0.2.2"
+local-ip-address = "0.4.9"
+tokio = { version = "1.21.2", features = ["full"] }
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+lto = "thin"
+opt-level = 3
